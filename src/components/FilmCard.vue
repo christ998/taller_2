@@ -7,6 +7,8 @@
       </div>
       <div class="text-absolute-centred">
         {{ film.original_title }}
+        <i class="fas fa-star" style="color: #D4D930   "></i>{{ film.vote_average }}
+
       </div>
     </div>
 
@@ -15,7 +17,6 @@
         <li><strong>Idioma:</strong> {{ film.original_language }}</li>
         <li><strong>Fecha Estreno:</strong> {{ film.release_date }}</li>
         <!--        <li><strong>Overview:</strong> {{ film.overview }}</li>-->
-        <li><strong>Puntuación: </strong> {{ film.vote_average }}</li>
       </ul>
       <div class="is-flex is-justify-content-center">
         <button class="button is-info" @click="deployFilm">Ver más</button>
@@ -44,8 +45,7 @@ export default {
       this.$router.push({
         name: 'FilmParticular',
         params: {
-          id: fil.id,
-          film: fil
+          id: fil.id
         }
       })
     }
@@ -67,7 +67,7 @@ export default {
 
 .text-absolute-centred {
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
 
